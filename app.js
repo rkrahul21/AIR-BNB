@@ -140,7 +140,7 @@ app.delete('/listings/:id' , wrapAsync ( async(req,res)=>{
 app.post("/listings/:id/reviews" ,  wrapAsync (async(req,res)=>{
   let listing = await Listing.findById(req.params.id);
    let newreview = new Review(req.body.review);
-// console.log(newreview);
+// console.log(newreview page);
    listing.reviews.push(newreview);
    await newreview.save();
    await listing.save();
